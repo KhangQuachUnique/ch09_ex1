@@ -1,61 +1,156 @@
-/* The styles for the elements */
-body { 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 85%;
-    margin-left: 2em;
-    margin-right: 2em;
-    width: 400px;
+/* Modern Redesign - Base Styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --border-color: #e1e4e8;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-h1 {     
-    font-size: 140%;
-    color: teal;
-    margin-bottom: .5em;    
+
+body {
+    font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    margin: 0;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
-h2 {     
-    font-size: 120%;
-    color: teal;
-    margin-bottom: .5em;    
+
+h1 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1em;
+    font-weight: 600;
 }
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.8em;
+    font-weight: 500;
+}
+
+/* Form Elements */
 label {
-    float: left;
-    width: 7em;
+    display: block;
     margin-bottom: 0.5em;
-    font-weight: bold;
-}
-input[type="text"], input[type="email"] {  /* An attribute selector */
-    width: 15em;
-    margin-left: 0.5em;    
-    margin-bottom: 0.5em;
-}
-span {
-    margin-left: 0.5em;    
-    margin-bottom: 0.5em;    
-}
-br {
-    clear: both;
+    font-weight: 500;
+    color: var(--secondary-color);
 }
 
-/* The styles for the tables */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1em;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Button Styles */
+.button, button, input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Table Styles */
 table {
-    border: 1px solid black;
+    width: 100%;
     border-collapse: collapse;
-}
-th, td {
-    border: 1px solid black;
-    text-align: left;
-    padding: .5em;
+    margin: 1em 0;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
 }
 
-/* The styles for the classes */
-.pad_top {
-    padding-top: 0.25em;
+th {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: left;
+    padding: 12px;
+    font-weight: 500;
 }
-.margin_left {
-    margin-left: 0.5em;
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
 }
-.align_left {
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.02);
+}
+
+/* Utility Classes */
+.pad-top {
+    padding-top: 1em;
+}
+
+.margin-left {
+    margin-left: 1em;
+}
+
+.align-left {
     text-align: left;
 }
-.align_right {
-    text-align: left;
+
+.align-right {
+    text-align: right;
+}
+
+.container {
+    background-color: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+    }
 }
